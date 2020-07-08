@@ -3,6 +3,7 @@ const path = require('path')
 const express = require('express')
 const hbs = require('hbs')
 
+const port = process.env.PORT || 3000
 
 const viewsPath = path.join(__dirname, '../templates/views')
 const partialsPath = path.join(__dirname, '../templates/partials')
@@ -110,6 +111,8 @@ app.get('*', (req, res) => {
     })
 })
 
-app.listen(3000, () =>{
+// Change to be the dyanmic port for heroku
+
+app.listen(port, () =>{
     console.log('Server is up and running!')
 })
