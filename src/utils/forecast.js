@@ -7,9 +7,11 @@ const forecast = (lat, long, callback) => {
         if (error){
             callback('Unable to connect to weather service')
         } else {
+            console.log(body.current)
             callback(undefined, {
                 temp: body.current.temperature,
-                feelslike: body.current.feelslike
+                feelslike: body.current.feelslike,
+                hmdty: body.current.humidity
             })
             // callback(undefined, 'Temp = ' + response.body.current.temperature)
                 

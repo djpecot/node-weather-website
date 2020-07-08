@@ -1,6 +1,3 @@
-console.log('Stuff is printing here! clientside')
-
-
 
 const weatherForm = document.querySelector('form')
 const searchElement = document.querySelector('input')
@@ -28,6 +25,7 @@ weatherForm.addEventListener('submit', (e) => {
             messageOne.textContent = data.error
         } else {
             console.log(data)
+            messageOne.textContent = "Weather data for " + data.location + ":"
             messageTwo.textContent = data.forecast + " in " + data.location
         }
     })
